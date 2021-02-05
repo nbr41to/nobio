@@ -16,7 +16,7 @@ export const Layout: React.FC = ({ children }) => {
           height={40}
           onClick={() => setIsOrange(!isOrange)}
         />
-        <Link href='/'><a>nobio</a></Link>
+        <Link href='/'><a className='site-title'>nobio</a></Link>
         <BurgerMenu />
       </StyledHeader>
       <StyledMain>
@@ -37,7 +37,7 @@ const StyledHeader = styled.header<{ isOrange: boolean }>`
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
-  a {
+  .site-title {
     font-size: 36px;
     font-weight: bold;
   }

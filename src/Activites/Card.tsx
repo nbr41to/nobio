@@ -33,6 +33,6 @@ const StyledCard = styled.div`
     text-align: center;
   }
   .sentents{
-    margin: 12px 0;
+    margin: 12px 8px;
   }
 `

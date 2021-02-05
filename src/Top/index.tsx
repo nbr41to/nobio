@@ -6,8 +6,8 @@ export const Top: React.FC = () => {
   return (
     <StyledTop>
       <div className='catchcopy'>
-        <div>学ぶことで人生を変える</div>
-        <div>これからは好奇心で生きていく</div>
+        {/* <div>学ぶことで人生を変える</div> */}
+        <div>好奇心で生きていく</div>
       </div>
       <div className='eyecatch'>
         <Image src='/book-lovers.png' width={500} height={500} />
