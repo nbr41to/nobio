@@ -1,4 +1,5 @@
 import React from 'react'
+import { Heading } from 'src/Heading'
 import styled from 'styled-components'
 import { CardBox } from './CardBox'
 import { Philosophy } from './Philosophy'
@@ -6,7 +7,7 @@ import { Philosophy } from './Philosophy'
 export const Activites: React.FC = () => {
   return (
     <>
-      <h2>Activites</h2>
+      <Heading>Activites</Heading>
       <hr />
       <StyledActivites>
         <Philosophy />

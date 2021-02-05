@@ -1,15 +1,16 @@
 import React from 'react'
+import { Heading } from 'src/Heading'
 import styled from 'styled-components'
 
 export const Profile: React.FC = () => {
   return (
-    <>
-      <h2>Profile</h2>
+    <StyledProfile>
+      <Heading>Profile</Heading>
 
-    </>
+    </StyledProfile>
   )
 }
 
 const StyledProfile = styled.div`
-
+  margin-top: 24px;
 `

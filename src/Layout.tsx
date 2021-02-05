@@ -1,42 +1,60 @@
 import React from 'react'
 import styled from 'styled-components'
 import { BurgerMenu } from './BurgerMenu'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export const Layout: React.FC = ({ children }) => {
+  const [isOrange, setIsOrange] = React.useState(false)
   return (
     <>
-      <BurgerMenu />
-      <StyledHeader>
-        <h1>nobio</h1>
+      <StyledHeader isOrange={isOrange}>
+        <Image
+          className='logo'
+          src='/logo.png'
+          width={40}
+          height={40}
+          onClick={() => setIsOrange(!isOrange)}
+        />
+        <Link href='/'><a>nobio</a></Link>
+        <BurgerMenu />
       </StyledHeader>
       <StyledMain>
         {children}
       </StyledMain>
-      <StyledFooter>
+      <StyledFooter isOrange={isOrange}>
         <small><span>©</span>2021 nob</small>
+        <p>Thak you for reading!!</p>
       </StyledFooter>
     </>
   )
 }
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.header<{ isOrange: boolean }>`
   color: #fff;
-  background-color: #3549fc;
+  background-color: ${({ isOrange }) => isOrange ? '#f7a145' : '#3549fc'};
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 12px;
-  h1 {
-    font-size: 40px;
+  padding: 12px 20px;
+  a {
+    font-size: 36px;
     font-weight: bold;
+  }
+  .logo {
+    animation: r1 5s linear infinite;
+    @keyframes r1 {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   }
   `
 const StyledMain = styled.main`
   padding: 16px;
   `
-const StyledFooter = styled.footer`
+const StyledFooter = styled.footer<{ isOrange: boolean }>`
   color: #fff;
-  background-color: #3549fc;
+  background-color:${({ isOrange }) => isOrange ? '#f7a145' : '#3549fc'};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,10 +64,12 @@ const StyledFooter = styled.footer`
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    
     span {
       font-size: 32px;
       margin-right: 4px;
     }
+  }
+  p {
+    color: #3549fc;
   }
 `

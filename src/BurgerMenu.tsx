@@ -27,9 +27,6 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
 }
 
 const StyledBurger = styled(Burger)`
-  position: absolute;
-  top: 12px;
-  right: 12px;
   z-index: 9;
   .open .burger-lines {
     background-color: #fff;
