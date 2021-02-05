@@ -11,7 +11,7 @@ export const Heading: React.FC = ({ children }) => {
 
 const StyledHeading = styled.div`
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   h2 {
     position: relative;
     padding: 4px 48px 2px;

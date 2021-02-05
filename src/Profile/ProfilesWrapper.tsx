@@ -10,7 +10,8 @@ export const ProfilesWrapper: React.FC = ({ children }) => {
 }
 
 const StyledProfiles = styled.div`
-  padding: 12px 24px;
+  padding: 16px 4px;
+  max-width: 500px;
   h3 {
     font-size: 18px;
     font-weight: bold;

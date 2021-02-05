@@ -7,7 +7,9 @@ export const Profile: React.FC = () => {
   return (
     <StyledProfile>
       <Heading>Profile</Heading>
-      <Image className='myphoto' src='/myphoto.png' width={240} height={240} />
+      <div className='myphoto'>
+        <Image className='myphoto' src='/myphoto.png' width={240} height={240} />
+      </div>
       <Profiles />
     </StyledProfile>
   )
@@ -21,5 +23,6 @@ const StyledProfile = styled.div`
   flex-wrap: wrap;
   .myphoto {
     border-radius: 50%;
+    margin: 38px;
   }
 `
