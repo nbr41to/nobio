@@ -1,17 +1,20 @@
 import React, { Children } from 'react'
 import styled from 'styled-components'
+import { useSpring, animated } from 'react-spring'
 
 export const Heading: React.FC = ({ children }) => {
+  const props = useSpring({ opacity: 1, left: 0, top: 0, from: { opacity: 0.2, left: 8, top: -2 }, config: { duration: 1200 } })
   return (
-    <StyledHeading>
+    <StyledHeading style={props}>
       <h2>{children}</h2>
     </StyledHeading>
   )
 }
 
-const StyledHeading = styled.div`
+const StyledHeading = styled(animated.div)`
   width: 100%;
   padding: 14px;
+  position: relative;
   h2 {
     position: relative;
     padding: 4px 48px 2px;

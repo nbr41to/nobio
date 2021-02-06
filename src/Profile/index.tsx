@@ -1,17 +1,22 @@
 import Image from 'next/image'
 import React from 'react'
 import { Heading } from 'src/Heading'
+import { FadeInWrapper } from 'src/FadeInWrapper'
 import styled from 'styled-components'
 import Profiles from './Profiles.mdx'
 export const Profile: React.FC = () => {
   return (
-    <StyledProfile>
+    <>
       <Heading>Profile</Heading>
-      <div className='myphoto'>
-        <Image className='myphoto' src='/myphoto.png' width={240} height={240} />
-      </div>
-      <Profiles />
-    </StyledProfile>
+      <FadeInWrapper>
+        <StyledProfile>
+          <div className='myphoto'>
+            <Image className='myphoto' src='/myphoto.png' width={240} height={240} />
+          </div>
+          <Profiles />
+        </StyledProfile>
+      </FadeInWrapper>
+    </>
   )
 }
 

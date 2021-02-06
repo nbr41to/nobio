@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { BurgerMenu } from './BurgerMenu'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Gou } from './Gou'
 
 export const Layout: React.FC = ({ children }) => {
   const [isOrange, setIsOrange] = React.useState(false)
@@ -21,6 +22,7 @@ export const Layout: React.FC = ({ children }) => {
       </StyledHeader>
       <StyledMain>
         {children}
+        {/* <Gou /> */}
       </StyledMain>
       <StyledFooter isOrange={isOrange}>
         <small><span>©</span>2021 nob</small>
@@ -59,13 +61,14 @@ const StyledFooter = styled.footer<{ isOrange: boolean }>`
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  padding: 8px 0;
   small {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 16px;
     span {
-      font-size: 32px;
+      /* font-size: 24px; */
       margin-right: 4px;
     }
   }

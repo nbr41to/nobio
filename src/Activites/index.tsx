@@ -10,8 +10,8 @@ export const Activites: React.FC = () => {
       <Heading>Activites</Heading>
       <hr />
       <StyledActivites>
-        <Philosophy />
         <CardBox />
+        <Philosophy />
       </StyledActivites>
     </>
   )
