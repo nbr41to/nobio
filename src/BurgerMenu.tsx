@@ -9,7 +9,6 @@ type BurgerMenuProps = {
 
 export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
   const [open, setOpen] = React.useState(false)
-  console.log(open)
   return (
     <>
       <StyledOverlay className={`${open && 'open'}`} onClick={() => setOpen(false)} />
