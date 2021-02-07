@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import { FadeInWrapper } from 'src/FadeInWrapper'
 import styled from 'styled-components'
-import PhilosophySentents from './philosophy.mdx'
+import PhilosophySentents from './Philosophy.mdx'
 
 export const Philosophy: React.FC = () => {
   return (
