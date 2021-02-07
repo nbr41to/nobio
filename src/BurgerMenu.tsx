@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Burger from '@animated-burgers/burger-arrow'
-import '@animated-burgers/burger-arrow/dist/styles.css'
+import { Link, animateScroll as scroll } from "react-scroll";
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 type BurgerMenuProps = {
 
@@ -9,50 +10,126 @@ type BurgerMenuProps = {
 
 export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
   const [open, setOpen] = React.useState(false)
+  if (open) {
+    disableBodyScroll('body')
+  } else {
+    clearAllBodyScrollLocks()
+  }
   return (
     <>
       <StyledOverlay className={`${open && 'open'}`} onClick={() => setOpen(false)} />
       <StyledBurger direction="right" isOpen={open} onClick={() => setOpen(!open)} />
       <StyledMenu className={`${open && 'open'}`}>
-        <h3>MENU</h3>
-        <a>Top</a>
-        <a>Profile</a>
-        <a>Activites</a>
-        <a>Output</a>
-        <a>Contact</a>
+        <nav>
+          <h3>MENU</h3>
+          <Link
+            to=''
+            smooth={true}
+            duration={1000}
+            offset={-8}
+            onClick={() => {
+              setOpen(false)
+              scroll.scrollToTop()
+            }}>
+            Top
+          </Link>
+          <Link
+            to='profile'
+            smooth={true}
+            duration={1000}
+            offset={-8}
+            onClick={() => setOpen(false)}
+          >
+            Profile
+          </Link>
+          <Link
+            to='activites'
+            smooth={true}
+            duration={1000}
+            offset={-8}
+            onClick={() => setOpen(false)}
+          >
+            Activites
+          </Link>
+          <Link
+            to='output'
+            smooth={true}
+            duration={1000}
+            offset={-8}
+            onClick={() => setOpen(false)}
+          >
+            Output
+          </Link>
+          <Link
+            to='contact'
+            smooth={true}
+            duration={1000}
+            offset={-8}
+            onClick={() => setOpen(false)}
+          >
+            Contact
+          </Link>
+        </nav>
       </StyledMenu >
     </>
   )
 }
 
 const StyledBurger = styled(Burger)`
+  position: fixed;
+  top: 12px;
+  right: 12px;
   z-index: 9;
-  .open .burger-lines {
-    background-color: #fff;
-    color: #fff;
-  }
 `
 const StyledMenu = styled.nav`
-  display: flex;
-  flex-direction: column;
-  width: 30%;
+  width: 75%;
+  max-width: 300px;
   height: 100vh;
   color: #fff;
   background-color: #3549fc;
   box-shadow: -8px 0 12px #333;
   padding: 24px;
-
-  z-index: 8;
+  
   position: fixed;
   top: 0;
   right: -100%;
+  z-index: 8;
   transition: .5s;
   &.open {
     right: 0;
   }
+  nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      width: 100%;
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 8px;
+      padding: 16px 0;
+      border-bottom: 2px solid #ccc;
+    }
+    a {
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      font-size: 28px;
+      margin: 4px;
+      &:hover {
+        background-color: #666;
+        border-radius: 8px;
+        text-decoration: underline;
+      }
+    }
+  }
 
   `
 const StyledOverlay = styled.div`
+  overflow: hidden;
   display: none;
   width: 100vw;
   height: 100vh;

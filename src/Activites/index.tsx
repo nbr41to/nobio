@@ -7,8 +7,7 @@ import { Philosophy } from './Philosophy'
 export const Activites: React.FC = () => {
   return (
     <>
-      <Heading>Activites</Heading>
-      <hr />
+      <Heading id='activites'>Activites</Heading>
       <StyledActivites>
         <CardBox />
         <Philosophy />

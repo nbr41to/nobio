@@ -1,7 +1,12 @@
 import { Card } from './Card'
 
-<Card title='プログラミング講師' bgImgSrc='/web-programming.png'>
-	テキストテキストテキストテキストテキストテキストテキストテキスト
-	テキストテキストテキストテキストテキストテキストテキストテキスト
-	テキストテキストテキストテキストテキストテキストテキストテキスト
-</Card>
+半年でフリーランスエンジニアになった学習経験と得意分野の"教える"の融合を提供します。
+HTML/CSS/JavaScript を学ぶことで、Web サイトを 1 から作成することを目指し、
+最終的にはモダンなライブラリである React を使って Web アプリケーションを作成することができるようになります。
+また、実力次第では、僕が所属しているいくつかの開発ギルドに招待いたします。
+
+export default ({ children }) => (
+	<Card title='プログラミング講師' bgImgSrc='/web-programming.png'>
+		{children}
+	</Card>
+)

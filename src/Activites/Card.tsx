@@ -22,26 +22,33 @@ export const Card: React.FC<CardProps> = ({ title, bgImgSrc, children }) => {
 
 const StyledCard = styled.div<{ bgImgSrc: string }>`
   width: 300px;
-  height: 300px;
+  height: 400px;
   line-height: 24px;
   padding: 12px 18px;
   margin: 16px;
+  display: flex;
+  flex-direction: column;
   border-radius: 4px;
   box-shadow: 3px 3px 8px #999;
   h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     padding: 8px 12px;
     border-bottom: 2px solid #333;
     text-align: center;
   }
-  .sentents{
+  .sentents {
+    flex: 1;
+    font-size: 18px;
     margin: 12px 8px;
     background-image: url(${({ bgImgSrc }) => bgImgSrc});
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-color:rgba(255,255,255,0.7);
+    background-color:rgba(255,255,255,0.8);
     background-blend-mode:lighten;
+    p {
+      margin-bottom: 6px;
+    }
   }
 `

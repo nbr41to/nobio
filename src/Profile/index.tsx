@@ -3,17 +3,17 @@ import React from 'react'
 import { Heading } from 'src/Heading'
 import { FadeInWrapper } from 'src/FadeInWrapper'
 import styled from 'styled-components'
-import Profiles from './Profiles.mdx'
+import ProfileMdx from './Profile.mdx'
 export const Profile: React.FC = () => {
   return (
     <>
-      <Heading>Profile</Heading>
+      <Heading id='profile'>Profile</Heading>
       <FadeInWrapper>
         <StyledProfile>
           <div className='myphoto'>
             <Image className='myphoto' src='/myphoto.png' width={240} height={240} />
           </div>
-          <Profiles />
+          <ProfileMdx />
         </StyledProfile>
       </FadeInWrapper>
     </>

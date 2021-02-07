@@ -3,6 +3,7 @@ import { reset } from './reset';
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
+  font-family: Arial, Helvetica, sans-serif;
   body {
     position: relative;
     box-sizing: border-box;

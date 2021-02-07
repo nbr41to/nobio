@@ -10,14 +10,17 @@ export const Layout: React.FC = ({ children }) => {
   return (
     <>
       <StyledHeader isOrange={isOrange}>
-        <Image
-          className='logo'
-          src='/logo.png'
-          width={40}
-          height={40}
-          onClick={() => setIsOrange(!isOrange)}
-        />
+        <div className='logo'>
+          <Image
+            src='/logo.png'
+            width={40}
+            height={40}
+            onClick={() => setIsOrange(!isOrange)}
+          />
+        </div>
         <Link href='/'><a className='site-title'>nobio</a></Link>
+        <div className='site-title-fixed'>nobio</div>
+        <div className='blur-header'></div>
         <BurgerMenu />
       </StyledHeader>
       <StyledMain>
@@ -36,24 +39,48 @@ const StyledHeader = styled.header<{ isOrange: boolean }>`
   color: #fff;
   background-color: ${({ isOrange }) => isOrange ? '#f7a145' : '#3549fc'};
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 12px 20px;
   .site-title {
     font-size: 36px;
     font-weight: bold;
+    z-index: 5;
+  }
+  .site-title-fixed {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 4px;
+    margin-left: 4px;
+    position: fixed;
+    top: 12px;
+    z-index: 3;
+    color: rgba(0,0,0,0.4)
   }
   .logo {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 3;
     animation: r1 5s linear infinite;
     @keyframes r1 {
       0%   { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
   }
+  .blur-header {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    backdrop-filter: blur(8px);
+  }
   `
 const StyledMain = styled.main`
-  padding: 16px;
-  `
+  padding: 20px;
+`
 const StyledFooter = styled.footer<{ isOrange: boolean }>`
   color: #fff;
   background-color:${({ isOrange }) => isOrange ? '#f7a145' : '#3549fc'};

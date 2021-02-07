@@ -21,4 +21,14 @@ const StyledPhilosophy = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 24px;
+  h2 {
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  p {
+    margin-top: 12px;
+    line-height: 24px;
+  }
 `
