@@ -20,8 +20,8 @@ export const Layout: React.FC = ({ children }) => {
         </div>
         <Link href='/'><a className='site-title'>nobio</a></Link>
         <div className='site-title-fixed'>nobio</div>
-        <div className='blur-header'></div>
         <BurgerMenu />
+        <div className='blur-header'></div>
       </StyledHeader>
       <StyledMain>
         {children}
@@ -74,8 +74,10 @@ const StyledHeader = styled.header<{ isOrange: boolean }>`
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
-    backdrop-filter: blur(8px);
+    z-index: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    /* background-color: rgba(255,255,255,0.3); */
+    /* backdrop-filter: blur(8px); // iOSでダメ */ 
   }
   `
 const StyledMain = styled.main`

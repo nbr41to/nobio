@@ -29,5 +29,6 @@ const StyledProfile = styled.div`
   .myphoto {
     border-radius: 50%;
     margin: 38px;
+    z-index: -1;
   }
 `

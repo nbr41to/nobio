@@ -8,7 +8,7 @@ export const Top: React.FC = () => {
     <StyledTop>
       <FadeInWrapper>
         <div className='eyecatch'>
-          <Image src='/book-lovers.png' width={360} height={360} />
+          <Image className='eyecatch' src='/book-lovers.png' width={360} height={360} />
         </div>
         <div className='catchcopy'>
           {/* <div>学ぶことで人生を変える</div> */}
@@ -36,5 +36,6 @@ const StyledTop = styled.div`
   }
   .eyecatch {
     margin: -40px 0 -48px 20px;
+    z-index: -1;
   }
 `

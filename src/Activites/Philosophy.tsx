@@ -8,7 +8,7 @@ export const Philosophy: React.FC = () => {
   return (
     <FadeInWrapper>
       <StyledPhilosophy>
-        <Image src='/philosophy.png' width={960} height={540} />
+        <Image className='philosophy' src='/philosophy.png' width={960} height={540} />
         <PhilosophySentents />
       </StyledPhilosophy>
     </FadeInWrapper>
@@ -30,5 +30,8 @@ const StyledPhilosophy = styled.div`
   p {
     margin-top: 12px;
     line-height: 24px;
+  }
+  .philosophy {
+    z-index: -1;
   }
 `
