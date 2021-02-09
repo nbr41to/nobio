@@ -3,8 +3,9 @@ import { reset } from './reset';
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
-  font-family: Arial, Helvetica, sans-serif;
   body {
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+      helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
     position: relative;
     box-sizing: border-box;
     color: #333333;
@@ -24,4 +25,6 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
   }
 
+/* burger */
+  
 `;

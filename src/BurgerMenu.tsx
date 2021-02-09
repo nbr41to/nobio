@@ -11,7 +11,7 @@ type BurgerMenuProps = {
 export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
   const [open, setOpen] = React.useState(false)
   if (open) {
-    disableBodyScroll('body')
+    disableBodyScroll(document.body)
   } else {
     clearAllBodyScrollLocks()
   }
@@ -86,14 +86,14 @@ const StyledMenu = styled.nav`
   max-width: 300px;
   height: 100vh;
   color: #fff;
-  background-color: #3549fc;
+  background-color: rgba(53, 73, 252, 0.9);
   box-shadow: -8px 0 12px #333;
   padding: 24px;
   
   position: fixed;
   top: 0;
   right: -100%;
-  z-index: 8;
+  z-index: 7;
   transition: .5s;
   &.open {
     right: 0;
@@ -104,6 +104,7 @@ const StyledMenu = styled.nav`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 120px;
     h3 {
       width: 100%;
       font-size: 32px;
