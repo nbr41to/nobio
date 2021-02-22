@@ -21,7 +21,10 @@ p {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    &:hover {
+    /* &:hover {
+      background-color: peachpuff;
+    } */
+    &:active {
       background-color: peachpuff;
     }
   }
