@@ -11,8 +11,4 @@ export const FadeInWrapper: React.FC<{ className?: string }> = ({ className = ''
   )
 }
 
-const StyledFadeInWrapper = styled(animated.div)`
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-`
+const StyledFadeInWrapper = styled(animated.div)``
