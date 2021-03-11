@@ -15,18 +15,31 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+li {
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+  &:hover {
+    background-color: peachpuff;
+    transition: 0.8s;
+    a {
+      border-bottom: 2px solid orange;
+      transition: 0.8s;
+    }
+  }
+  &:active {
+    background-color: orange;
+    color: #fff;
+  }
   a {
-    width: 100%;
-    padding: 16px 0;
+    display: inline-block;
+    padding: 4px 12px;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    /* &:hover {
-      background-color: peachpuff;
-    } */
-    &:active {
-      background-color: peachpuff;
-    }
+    border-bottom: 2px solid navy;
   }
 }
 `

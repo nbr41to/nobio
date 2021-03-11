@@ -3,6 +3,7 @@ import { reset } from './reset';
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
       helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
