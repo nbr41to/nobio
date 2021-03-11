@@ -11,8 +11,8 @@ export const Top: React.FC = () => {
           <Image className='eyecatch' src='/book-lovers.png' width={360} height={360} />
         </div>
         <div className='catchcopy'>
-          {/* <div>学ぶことで人生を変える</div> */}
-          <div>好奇心で生きていく</div>
+          <div>学ぶことで人生を変え、</div>
+          <div>愛と好奇心で生きていく</div>
         </div>
       </FadeInWrapper>
     </StyledTop>
