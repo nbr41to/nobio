@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Burger from '@animated-burgers/burger-arrow'
 import { Link, animateScroll as scroll } from "react-scroll";
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { useRouter } from 'next/router'
 
 type BurgerMenuProps = {
 
@@ -10,69 +11,77 @@ type BurgerMenuProps = {
 
 export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
   const [open, setOpen] = React.useState(false)
-  if (open) {
-    disableBodyScroll(document.body)
+  const router = useRouter()
+  React.useEffect(() => {
+    if (open) {
+      disableBodyScroll(document.body)
+    } else {
+      clearAllBodyScrollLocks()
+    }
+  }, [open])
+  console.log(router.pathname)
+  if (router.pathname === '/') {
+    return (
+      <>
+        <StyledOverlay className={`${open && 'open'}`} onClick={() => setOpen(false)} />
+        <StyledBurger direction="right" isOpen={open} onClick={() => setOpen(!open)} />
+        <StyledMenu className={`${open && 'open'}`}>
+          <nav>
+            <h3>MENU</h3>
+            <Link
+              to=''
+              smooth={true}
+              duration={1000}
+              offset={-8}
+              onClick={() => {
+                setOpen(false)
+                scroll.scrollToTop()
+              }}>
+              Top
+          </Link>
+            <Link
+              to='profile'
+              smooth={true}
+              duration={1000}
+              offset={-8}
+              onClick={() => setOpen(false)}
+            >
+              Profile
+          </Link>
+            <Link
+              to='activites'
+              smooth={true}
+              duration={1000}
+              offset={-8}
+              onClick={() => setOpen(false)}
+            >
+              Activites
+          </Link>
+            <Link
+              to='output'
+              smooth={true}
+              duration={1000}
+              offset={-8}
+              onClick={() => setOpen(false)}
+            >
+              Output
+          </Link>
+            <Link
+              to='contact'
+              smooth={true}
+              duration={1000}
+              offset={-8}
+              onClick={() => setOpen(false)}
+            >
+              Contact
+          </Link>
+          </nav>
+        </StyledMenu >
+      </>
+    )
   } else {
-    clearAllBodyScrollLocks()
+    return <StyledBackButton direction="left" isOpen onClick={() => router.back()} />
   }
-  return (
-    <>
-      <StyledOverlay className={`${open && 'open'}`} onClick={() => setOpen(false)} />
-      <StyledBurger direction="right" isOpen={open} onClick={() => setOpen(!open)} />
-      <StyledMenu className={`${open && 'open'}`}>
-        <nav>
-          <h3>MENU</h3>
-          <Link
-            to=''
-            smooth={true}
-            duration={1000}
-            offset={-8}
-            onClick={() => {
-              setOpen(false)
-              scroll.scrollToTop()
-            }}>
-            Top
-          </Link>
-          <Link
-            to='profile'
-            smooth={true}
-            duration={1000}
-            offset={-8}
-            onClick={() => setOpen(false)}
-          >
-            Profile
-          </Link>
-          <Link
-            to='activites'
-            smooth={true}
-            duration={1000}
-            offset={-8}
-            onClick={() => setOpen(false)}
-          >
-            Activites
-          </Link>
-          <Link
-            to='output'
-            smooth={true}
-            duration={1000}
-            offset={-8}
-            onClick={() => setOpen(false)}
-          >
-            Output
-          </Link>
-          <Link
-            to='contact'
-            smooth={true}
-            duration={1000}
-            offset={-8}
-            onClick={() => setOpen(false)}
-          >
-            Contact
-          </Link>
-        </nav>
-      </StyledMenu >
-    </>
-  )
 }
 
 const StyledBurger = styled(Burger)`
@@ -143,4 +152,10 @@ const StyledOverlay = styled.div`
   &.open {
     display: block;
   }
+`
+const StyledBackButton = styled(Burger)`
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 9;
 `

@@ -15,15 +15,15 @@ const StyledProfilesMdxWrapper = styled.div`
   h3 {
     font-size: 20px;
     font-weight: bold;
-    padding: 8px 0;
+    padding: 12px 0;
     padding-left: 12px;
     border-left: 4px solid #666;
     margin: 8px 0;
-    background-color: #f9f9f9;
+    background-color: #f1f1f1;
   }
   p {
     margin-bottom: 12px;
     padding: 0 4px;
-    line-height: 28px;
+    line-height: 32px;
   }
 `

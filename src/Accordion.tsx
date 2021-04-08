@@ -45,14 +45,16 @@ const StyledLabelBox = styled.div<{ labelColor: string, bgColor: string }>`
   align-items: center;
   color: ${({ labelColor }) => labelColor};
   background-color: ${({ bgColor }) => bgColor};
-  padding: 8px 16px;
+  padding: 12px 20px;
   box-shadow: 0 0 4px rgba(0,0,0,0.3);
   cursor: pointer;
-  margin: 1px 0;
+  margin: 4px 0;
   box-sizing: border-box;
   border-radius: 2px;
 `
 const StyledLabel = styled.div`
+  font-size: 20px;
+  font-weight: bold;
 `
 const ArrowIcon = styled.div<{ color: string, open: boolean }>`
   position: relative;
@@ -75,7 +77,7 @@ const ArrowIcon = styled.div<{ color: string, open: boolean }>`
 `
 const StyledDetail = styled.div<{ open: boolean, bgColorRGB: any }>`
   word-wrap: break-word;
-  background-color: rgba(${({ bgColorRGB }) => bgColorRGB}, 0.3);
+  background-color: rgba(${({ bgColorRGB }) => bgColorRGB}, 0.2);
   overflow-y: scroll;
   padding: 0 24px;
   max-height: 0;
