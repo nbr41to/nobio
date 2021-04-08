@@ -22,7 +22,7 @@ li {
   text-align: center;
   padding: 8px 0;
   &:hover {
-    background-color: peachpuff;
+    background: linear-gradient(to left,#fff, peachpuff, #fff);
     transition: 0.8s;
     a {
       border-bottom: 2px solid orange;
@@ -30,7 +30,7 @@ li {
     }
   }
   &:active {
-    background-color: orange;
+    background: linear-gradient(to left,#fff, orange, #fff);
     color: #fff;
   }
   a {

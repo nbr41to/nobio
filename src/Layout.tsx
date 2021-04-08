@@ -28,8 +28,8 @@ export const Layout: React.FC = ({ children }) => {
         {/* <Gou /> */}
       </StyledMain>
       <StyledFooter isOrange={isOrange}>
-        <small><span>©</span>2021 nob</small>
-        <p>Thak you for reading!!</p>
+        <small><span>©</span>2021 nob </small>
+        <p>{'　'} Thank you for reading!!</p>
       </StyledFooter>
     </>
   )
@@ -81,9 +81,12 @@ const StyledHeader = styled.header<{ isOrange: boolean }>`
   }
   `
 const StyledMain = styled.main`
+  min-height: 100vh;
   padding: 20px;
+  padding-bottom: 54px;
 `
 const StyledFooter = styled.footer<{ isOrange: boolean }>`
+  width: 100%;
   color: #fff;
   background-color:${({ isOrange }) => isOrange ? '#f7a145' : '#3549fc'};
   display: flex;
@@ -91,6 +94,8 @@ const StyledFooter = styled.footer<{ isOrange: boolean }>`
   align-items: center;
   font-weight: bold;
   padding: 8px 0;
+  position: absolute;
+  bottom: 0;
   small {
     display: flex;
     justify-content: center;
