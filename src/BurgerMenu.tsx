@@ -1,25 +1,25 @@
-import React from 'react'
-import styled from 'styled-components'
-import Burger from '@animated-burgers/burger-arrow'
+import React from 'react';
+import styled from 'styled-components';
+import Burger from '@animated-burgers/burger-arrow';
 import { Link, animateScroll as scroll } from "react-scroll";
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
 type BurgerMenuProps = {
 
-}
+};
 
 export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
-  const [open, setOpen] = React.useState(false)
-  const router = useRouter()
+  const [open, setOpen] = React.useState(false);
+  const router = useRouter();
   React.useEffect(() => {
     if (open) {
-      disableBodyScroll(document.body)
+      disableBodyScroll(document.body);
     } else {
-      clearAllBodyScrollLocks()
+      clearAllBodyScrollLocks();
     }
-  }, [open])
-  console.log(router.pathname)
+  }, [open]);
+
   if (router.pathname === '/') {
     return (
       <>
@@ -34,8 +34,8 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
               duration={1000}
               offset={-8}
               onClick={() => {
-                setOpen(false)
-                scroll.scrollToTop()
+                setOpen(false);
+                scroll.scrollToTop();
               }}>
               Top
           </Link>
@@ -78,18 +78,18 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
           </nav>
         </StyledMenu >
       </>
-    )
+    );
   } else {
-    return <StyledBackButton direction="left" isOpen onClick={() => router.back()} />
+    return <StyledBackButton direction="left" isOpen onClick={() => router.back()} />;
   }
-}
+};
 
 const StyledBurger = styled(Burger)`
   position: fixed;
   top: 12px;
   right: 12px;
   z-index: 9;
-`
+`;
 const StyledMenu = styled.nav`
   width: 75%;
   max-width: 300px;
@@ -137,7 +137,7 @@ const StyledMenu = styled.nav`
     }
   }
 
-  `
+  `;
 const StyledOverlay = styled.div`
   overflow: hidden;
   display: none;
@@ -152,10 +152,10 @@ const StyledOverlay = styled.div`
   &.open {
     display: block;
   }
-`
+`;
 const StyledBackButton = styled(Burger)`
   position: fixed;
   top: 12px;
   right: 12px;
   z-index: 9;
-`
+`;

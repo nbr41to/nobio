@@ -1,19 +1,19 @@
-import Image from 'next/image'
-import React from 'react'
-import { FadeInWrapper } from 'src/FadeInWrapper'
-import styled from 'styled-components'
-import PhilosophySentents from './Philosophy.mdx'
+import Image from 'next/image';
+import React from 'react';
+import { FadeInWrapper } from 'src/FadeInWrapper';
+import styled from 'styled-components';
+import PhilosophySentents from './Philosophy.mdx';
 
 export const Philosophy: React.FC = () => {
   return (
-    <FadeInWrapper>
-      <StyledPhilosophy>
+    <StyledPhilosophy>
+      <FadeInWrapper>
         <Image className='philosophy' src='/philosophy.png' width={960} height={540} />
         <PhilosophySentents />
-      </StyledPhilosophy>
-    </FadeInWrapper>
-  )
-}
+      </FadeInWrapper>
+    </StyledPhilosophy>
+  );
+};
 
 const StyledPhilosophy = styled.div`
   display: flex;
@@ -34,4 +34,4 @@ const StyledPhilosophy = styled.div`
   .philosophy {
     z-index: -1;
   }
-`
+`;
