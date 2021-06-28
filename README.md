@@ -12,6 +12,8 @@
 
 ## Activites
 
+正しくは Activities
+
 ## Output
 
 ## Contact
