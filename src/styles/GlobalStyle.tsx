@@ -12,6 +12,15 @@ export const GlobalStyle = createGlobalStyle`
     color: #333333;
     background-color: #fff;
   }
+  h1 {
+  font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 18px;
+  }
 
   .box {
     border: 1px solid black;
