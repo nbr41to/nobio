@@ -1,8 +1,8 @@
-import { Activites } from '../Activites'
-import { Top } from '../Top'
-import { Profile } from '../Profile'
-import { Output } from '../Output'
-import { Contact } from '../Contact'
+import { Activites } from '../src/Activites';
+import { Top } from '../src/Top';
+import { Profile } from '../src/Profile';
+import { Output } from '../src/Output';
+import { Contact } from '../src/Contact';
 import styled from 'styled-components';
 
 export default function Home() {
@@ -14,10 +14,10 @@ export default function Home() {
       <Output />
       <Contact />
     </TopPage>
-  )
+  );
 }
 
 const TopPage = styled.div`
   max-width: 1080px;
   margin: 0 auto;
-`
+`;

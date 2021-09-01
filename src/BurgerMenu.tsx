@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import Burger from '@animated-burgers/burger-arrow';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link, animateScroll as scroll } from 'react-scroll';
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import { useRouter } from 'next/router';
+import { ShippingBoxV2 } from 'akar-icons';
 
-type BurgerMenuProps = {
-
-};
+type BurgerMenuProps = {};
 
 export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
+
   React.useEffect(() => {
     if (open) {
       disableBodyScroll(document.body);
@@ -23,8 +23,15 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
   if (router.pathname === '/') {
     return (
       <>
-        <StyledOverlay className={`${open && 'open'}`} onClick={() => setOpen(false)} />
-        <StyledBurger direction="right" isOpen={open} onClick={() => setOpen(!open)} />
+        <StyledOverlay
+          className={`${open && 'open'}`}
+          onClick={() => setOpen(false)}
+        />
+        <StyledBurger
+          direction='right'
+          isOpen={open}
+          onClick={() => setOpen(!open)}
+        />
         <StyledMenu className={`${open && 'open'}`}>
           <nav>
             <h3>MENU</h3>
@@ -36,9 +43,10 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
               onClick={() => {
                 setOpen(false);
                 scroll.scrollToTop();
-              }}>
+              }}
+            >
               Top
-          </Link>
+            </Link>
             <Link
               to='profile'
               smooth={true}
@@ -47,7 +55,7 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
               onClick={() => setOpen(false)}
             >
               Profile
-          </Link>
+            </Link>
             <Link
               to='activites'
               smooth={true}
@@ -56,7 +64,7 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
               onClick={() => setOpen(false)}
             >
               Activites
-          </Link>
+            </Link>
             <Link
               to='output'
               smooth={true}
@@ -65,7 +73,7 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
               onClick={() => setOpen(false)}
             >
               Output
-          </Link>
+            </Link>
             <Link
               to='contact'
               smooth={true}
@@ -74,13 +82,23 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
               onClick={() => setOpen(false)}
             >
               Contact
-          </Link>
+            </Link>
+            <a
+              onClick={() => {
+                setOpen(false);
+                router.push('/toybox');
+              }}
+            >
+              <ShippingBoxV2 size={28} />
+            </a>
           </nav>
-        </StyledMenu >
+        </StyledMenu>
       </>
     );
   } else {
-    return <StyledBackButton direction="left" isOpen onClick={() => router.back()} />;
+    return (
+      <StyledBackButton direction='left' isOpen onClick={() => router.back()} />
+    );
   }
 };
 
@@ -98,12 +116,12 @@ const StyledMenu = styled.nav`
   background-color: rgba(53, 73, 252, 0.9);
   box-shadow: -8px 0 12px #333;
   padding: 24px;
-  
+
   position: fixed;
   top: 0;
   right: -100%;
   z-index: 7;
-  transition: .5s;
+  transition: 0.5s;
   &.open {
     right: 0;
   }
@@ -133,11 +151,11 @@ const StyledMenu = styled.nav`
         background-color: #666;
         border-radius: 8px;
         text-decoration: underline;
+        cursor: pointer;
       }
     }
   }
-
-  `;
+`;
 const StyledOverlay = styled.div`
   overflow: hidden;
   display: none;

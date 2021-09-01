@@ -1,0 +1,13 @@
+.parent {
+  contain: layout inline-size;
+}
+
+.child {
+  background-color: aquamarine;
+}
+@container (min-width: 400px) {
+  .child {
+    background-color: tomato;
+    font-size: 2em;
+  }
+}

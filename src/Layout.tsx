@@ -1,12 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import { BurgerMenu } from './BurgerMenu'
-import Link from 'next/link'
-import Image from 'next/image'
-import { Gou } from './Gou'
+import React from 'react';
+import styled from 'styled-components';
+import { BurgerMenu } from './BurgerMenu';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export const Layout: React.FC = ({ children }) => {
-  const [isOrange, setIsOrange] = React.useState(false)
+  const [isOrange, setIsOrange] = React.useState(false);
   return (
     <>
       <StyledHeader isOrange={isOrange}>
@@ -18,7 +17,9 @@ export const Layout: React.FC = ({ children }) => {
             onClick={() => setIsOrange(!isOrange)}
           />
         </div>
-        <Link href='/'><a className='site-title'>nobio</a></Link>
+        <Link href='/'>
+          <a className='site-title'>nobio</a>
+        </Link>
         <div className='site-title-fixed'>nobio</div>
         <BurgerMenu />
         <div className='blur-header'></div>
@@ -28,16 +29,18 @@ export const Layout: React.FC = ({ children }) => {
         {/* <Gou /> */}
       </StyledMain>
       <StyledFooter isOrange={isOrange}>
-        <small><span>©</span>2021 nob </small>
+        <small>
+          <span>©</span>2021 nob{' '}
+        </small>
         <p>{'　'} Thank you for reading!!</p>
       </StyledFooter>
     </>
-  )
-}
+  );
+};
 
 const StyledHeader = styled.header<{ isOrange: boolean }>`
   color: #fff;
-  background-color: ${({ isOrange }) => isOrange ? '#f7a145' : '#3549fc'};
+  background-color: ${({ isOrange }) => (isOrange ? '#f7a145' : '#3549fc')};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,6 +49,7 @@ const StyledHeader = styled.header<{ isOrange: boolean }>`
     font-size: 36px;
     font-weight: bold;
     z-index: 5;
+    cursor: pointer;
   }
   .site-title-fixed {
     font-size: 36px;
@@ -55,7 +59,7 @@ const StyledHeader = styled.header<{ isOrange: boolean }>`
     position: fixed;
     top: 12px;
     z-index: 3;
-    color: rgba(0,0,0,0.4)
+    color: rgba(0, 0, 0, 0.4);
   }
   .logo {
     position: fixed;
@@ -64,8 +68,12 @@ const StyledHeader = styled.header<{ isOrange: boolean }>`
     z-index: 3;
     animation: r1 5s linear infinite;
     @keyframes r1 {
-      0%   { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotateY(0deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
     }
   }
   .blur-header {
@@ -75,20 +83,20 @@ const StyledHeader = styled.header<{ isOrange: boolean }>`
     top: 0;
     left: 0;
     z-index: 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     /* background-color: rgba(255,255,255,0.3); */
-    /* backdrop-filter: blur(8px); // iOSでダメ */ 
+    /* backdrop-filter: blur(8px); // iOSでダメ */
   }
-  `
+`;
 const StyledMain = styled.main`
   min-height: 100vh;
   padding: 20px;
   padding-bottom: 54px;
-`
+`;
 const StyledFooter = styled.footer<{ isOrange: boolean }>`
   width: 100%;
   color: #fff;
-  background-color:${({ isOrange }) => isOrange ? '#f7a145' : '#3549fc'};
+  background-color: ${({ isOrange }) => (isOrange ? '#f7a145' : '#3549fc')};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,4 +117,4 @@ const StyledFooter = styled.footer<{ isOrange: boolean }>`
   p {
     color: #3549fc;
   }
-`
+`;
