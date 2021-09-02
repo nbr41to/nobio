@@ -1,19 +1,25 @@
-import React, { Children } from 'react'
-import styled from 'styled-components'
-import { useSpring, animated } from 'react-spring'
+import React, { Children } from 'react';
+import styled from 'styled-components';
+import { useSpring, animated } from 'react-spring';
 
 type HeadingProps = {
-  id: string
-}
+  id?: string;
+};
 
-export const Heading: React.FC<HeadingProps> = ({ id, children }) => {
-  const props = useSpring({ opacity: 1, left: 0, top: 0, from: { opacity: 0.2, left: 8, top: -2 }, config: { duration: 1200 } })
+export const Heading: React.FC<HeadingProps> = ({ id = '', children }) => {
+  const props = useSpring({
+    opacity: 1,
+    left: 0,
+    top: 0,
+    from: { opacity: 0.2, left: 8, top: -2 },
+    config: { duration: 1200 },
+  });
   return (
     <StyledHeading style={props}>
       <h2 id={id}>{children}</h2>
     </StyledHeading>
-  )
-}
+  );
+};
 
 const StyledHeading = styled(animated.div)`
   width: 100%;
@@ -29,7 +35,7 @@ const StyledHeading = styled(animated.div)`
     margin-left: -33px;
     line-height: 1.3;
     border-bottom: solid 4px navy;
-    z-index:-2;
+    z-index: -2;
   }
 
   h2:before {
@@ -57,4 +63,4 @@ const StyledHeading = styled(animated.div)`
     border-bottom: solid 79px white;
     z-index: -1;
   }
-`
+`;
