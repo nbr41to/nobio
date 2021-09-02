@@ -1,41 +1,32 @@
 import styled from 'styled-components';
-import { Accordion } from 'src/Accordion'
-import { Heading } from 'src/Heading'
-import TestMdx from 'src/about-markdown/test.mdx'
+import { Accordion } from 'src/Accordion';
+import CareerMdx from 'src/about-markdown/career.mdx';
+import FeatureMdx from 'src/about-markdown/feature.mdx';
+import InterestMdx from 'src/about-markdown/interest.mdx';
+import OtherMdx from 'src/about-markdown/other.mdx';
 import { FadeInWrapper } from 'src/FadeInWrapper';
+import { Heading } from 'src/Heading';
 export default function Home() {
   return (
     <AboutPage>
-      <Heading id='###'>about me.</Heading>
+      <Heading>About me.</Heading>
+      <p>私について</p>
       <FadeInWrapper>
-        <p className='about-description'>過去の経験から見えてきた自分の性質や特性に加えて,信念や大切にしていることをここに記録していきます.</p>
-        <Accordion label='Accordionです' labelColor='#fff' bgColor='#3549fc'>
-          <p>中身を書いていくぅ！！</p>
+        <Accordion label='Career' labelColor='#fff' bgColor='#f7a145'>
+          <CareerMdx />
         </Accordion>
-        <Accordion label='Accordionです' labelColor='#fff' bgColor='#f7a145'>
-          <TestMdx />
+        <Accordion label='Feature' labelColor='#fff' bgColor='#3549fc'>
+          <FeatureMdx />
         </Accordion>
-        <Accordion label='Accordionです' labelColor='#fff' bgColor='#3549fc'>
-          <p>中身を書いていくぅ！！</p>
+        <Accordion label='Interest' labelColor='#fff' bgColor='#f7a145'>
+          <InterestMdx />
         </Accordion>
-        <Accordion label='Accordionです' labelColor='#fff' bgColor='#f7a145'>
-          <p>中身を書いていくぅ！！</p>
-        </Accordion>
-        <Accordion label='Accordionです' labelColor='#fff' bgColor='#3549fc'>
-          <p>中身を書いていくぅ！！</p>
-        </Accordion>
-        <Accordion label='Accordionです' labelColor='#fff' bgColor='#f7a145'>
-          <p>中身を書いていくぅ！！</p>
-        </Accordion>
-        <Accordion label='Accordionです' labelColor='#fff' bgColor='#3549fc'>
-          <p>中身を書いていくぅ！！</p>
-        </Accordion>
-        <Accordion label='Accordionです' labelColor='#fff' bgColor='#f7a145'>
-          <p>中身を書いていくぅ！！</p>
+        <Accordion label='Other' labelColor='#fff' bgColor='#3549fc'>
+          <OtherMdx />
         </Accordion>
       </FadeInWrapper>
     </AboutPage>
-  )
+  );
 }
 
 const AboutPage = styled.div`
@@ -44,4 +35,4 @@ const AboutPage = styled.div`
   .about-description {
     margin: 8px 8px 20px;
   }
-`
+`;
